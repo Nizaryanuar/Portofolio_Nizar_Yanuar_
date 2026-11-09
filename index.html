@@ -1,0 +1,602 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Nizar Yanuar Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Inter:wght@400;500&display=swap">
+<style>
+/* Layout: sticky nav, two-column hero with CSS-built app mockups, alternating project cards, process flow, skill chips, certificate gallery, about + experience, direct contact cards. */
+:root{
+  --indigo:#6366F1; --indigo-600:#4F46E5; --indigo-50:#EEF2FF; --indigo-100:#E0E7FF;
+  --bg:#FFFFFF; --bg-alt:#FAFAFA; --surface:#FFFFFF; --frame:#F3F4F6; --line:#E5E7EB; --dash:#D1D5DB;
+  --ink:#111827; --ink-2:#4B5563; --ink-3:#6B7280; --nav:rgba(255,255,255,.85);
+  --dot:#E5E7EB; --chip:#F3F4F6; --chip-hover:#EEF2FF; --accent-text:#4F46E5;
+  --shadow:0 4px 24px rgba(0,0,0,.06); --shadow-hover:0 12px 36px rgba(17,24,39,.12);
+  --foot:#111827; --foot-text:#9CA3AF; --on-indigo:#fff;
+  --display:'DM Sans',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B0F1A; --bg-alt:#0F1422; --surface:#151B2D; --frame:#1C2338; --line:#273049; --dash:#3A4466;
+  --ink:#F3F4F6; --ink-2:#B6BDCC; --ink-3:#8C95A9; --nav:rgba(11,15,26,.85);
+  --dot:#1F2740; --chip:#1C2338; --chip-hover:#232C4D; --accent-text:#A5B4FC; --indigo-50:#1E2347; --indigo-100:#2A3170;
+  --shadow:0 4px 24px rgba(0,0,0,.35); --shadow-hover:0 12px 36px rgba(0,0,0,.5);
+  --foot:#070A12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0F1A; --bg-alt:#0F1422; --surface:#151B2D; --frame:#1C2338; --line:#273049; --dash:#3A4466;
+  --ink:#F3F4F6; --ink-2:#B6BDCC; --ink-3:#8C95A9; --nav:rgba(11,15,26,.85);
+  --dot:#1F2740; --chip:#1C2338; --chip-hover:#232C4D; --accent-text:#A5B4FC; --indigo-50:#1E2347; --indigo-100:#2A3170;
+  --shadow:0 4px 24px rgba(0,0,0,.35); --shadow-hover:0 12px 36px rgba(0,0,0,.5);
+  --foot:#070A12; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.15}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:80px}
+.alt{background:var(--bg-alt)}
+.eyebrow{font:500 12px/1 var(--body);text-transform:uppercase;letter-spacing:.14em;color:var(--accent-text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border-radius:12px;font:500 15px var(--body);transition:all .2s ease;cursor:pointer;border:1px solid var(--indigo)}
+.btn-solid{background:var(--indigo);color:var(--on-indigo)}
+.btn-solid:hover{background:var(--indigo-600);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--accent-text)}
+.btn-outline:hover{background:var(--indigo);color:var(--on-indigo)}
+.link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;color:var(--accent-text)}
+.link svg{transition:transform .2s ease}.link:hover svg{transform:translateX(4px)}
+.sec-head{display:flex;align-items:center;gap:20px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);white-space:nowrap}
+.sec-head hr{flex:1;border:0;border-top:1px solid var(--line);margin:0}
+.sec-head span{font-size:14px;color:var(--ink-3);white-space:nowrap}
+
+/* NAV */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--nav)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font:500 20px var(--display);display:flex;align-items:center;gap:2px;min-height:44px}
+.logo i{width:7px;height:7px;border-radius:50%;background:var(--indigo);margin-left:3px;margin-top:8px}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0}
+.nav ul a{font-size:15px;color:var(--ink-2);padding:10px 0;transition:color .2s ease}
+.nav ul a:hover{color:var(--accent-text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.icon-btn{width:44px;height:44px;border-radius:12px;display:inline-grid;place-items:center;background:transparent;border:1px solid var(--line);color:var(--ink);cursor:pointer;transition:all .2s ease}
+.icon-btn:hover{border-color:var(--indigo);color:var(--accent-text)}
+.burger{display:none}
+.drawer{position:fixed;inset:0;z-index:100;visibility:hidden}
+.drawer .scrim{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .25s ease}
+.drawer nav{position:absolute;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--surface);padding:calc(20px + env(safe-area-inset-top,0px)) 24px 24px;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;gap:4px}
+.drawer.open{visibility:visible}.drawer.open .scrim{opacity:1}.drawer.open nav{transform:none}
+.drawer nav a.dl{font:500 22px var(--display);padding:12px 0;min-height:48px;border-bottom:1px solid var(--line)}
+.drawer .close{align-self:flex-end;margin-bottom:12px}
+.drawer .btn{margin-top:20px}
+
+/* HERO */
+.hero{background:var(--bg-alt);background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);background-size:40px 40px;padding-block:72px 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(36px,5.2vw,58px);margin:20px 0 24px}
+.hero .sub{font-size:18px;color:var(--ink-2);max-width:540px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin-top:36px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.badge{font-size:13px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.badge b{color:var(--ink);font-weight:500}
+.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}.rise:nth-child(4){animation-delay:.24s}.rise:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.stage{position:relative;height:480px;animation:fade 1s .3s ease both}
+.dev{position:absolute;background:var(--surface);border:1px solid var(--line);box-shadow:0 24px 60px rgba(17,24,39,.18);overflow:hidden;will-change:transform}
+.browser{left:0;top:40px;width:78%;height:290px;border-radius:14px;transform:rotate(-6deg)}
+.bar{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--frame)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--dash)}
+.bar u{margin-left:8px;flex:1;height:16px;border-radius:8px;background:var(--surface);text-decoration:none;font:500 9px/16px var(--body);color:var(--ink-3);padding-left:10px}
+.code{padding:14px 16px;font:12px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2)}
+.code .k{color:var(--indigo)}.code .s{color:#10B981}.code .c{color:var(--ink-3)}
+.phone{right:2%;top:0;width:36%;height:400px;border-radius:30px;border-width:6px;border-color:var(--ink);transform:rotate(12deg);padding:18px 12px;display:flex;flex-direction:column;gap:9px}
+.phone h5{margin:0;font:700 13px var(--display)}
+.phone .tile{border-radius:12px;padding:10px;background:var(--indigo-50);display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--ink-2)}
+.phone .tile b{font:700 14px var(--display);color:var(--ink)}
+.phone .tile.hl{background:var(--indigo);color:#fff}.phone .tile.hl b{color:#fff}
+.phone .pay{margin-top:auto;border-radius:10px;background:var(--ink);color:var(--bg);text-align:center;font:500 12px/36px var(--body)}
+.tablet{left:14%;bottom:0;width:58%;height:170px;border-radius:18px;transform:rotate(4deg);padding:14px 16px}
+.tablet small{font-size:11px;color:var(--ink-3)}
+.tablet strong{display:block;font:700 26px var(--display);color:var(--ink)}
+.tablet svg{position:absolute;right:12px;bottom:10px;width:58%;height:70px}
+
+/* PROJECTS */
+.projects{display:flex;flex-direction:column;gap:32px}
+.card{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--surface);border-radius:24px;padding:40px;box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.card:nth-child(even) .shot{order:2}
+.shot{background:var(--frame);border-radius:16px;min-height:320px;display:grid;place-items:center;padding:24px;overflow:hidden;min-width:0}
+.tag{font-size:13px;color:var(--accent-text);font-weight:500;letter-spacing:.02em}
+.card h3{font-size:clamp(24px,3vw,32px);margin:12px 0 14px}
+.card .desc{color:var(--ink-2)}
+.metrics{display:flex;flex-wrap:wrap;gap:8px 10px;margin:24px 0 8px;padding:0;list-style:none}
+.metrics li{font-size:13px;padding:6px 12px;border-radius:999px;background:var(--indigo-50);color:var(--accent-text);font-weight:500}
+.card>div{min-width:0}
+/* mini illustrations */
+.mini{width:100%;max-width:380px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(17,24,39,.1);padding:16px;font-size:12px;color:var(--ink-2)}
+.mini h6{margin:0 0 12px;font:700 14px var(--display);color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.vc{border-radius:10px;background:var(--indigo-50);padding:10px;display:flex;flex-direction:column;gap:2px}
+.vc b{font:700 13px var(--display);color:var(--ink)}
+.vc.sel{background:var(--indigo);color:#fff}.vc.sel b{color:#fff}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.pill{padding:3px 9px;border-radius:999px;background:var(--indigo-50);color:var(--accent-text);font-weight:500;font-size:11px}
+.pill.ok{background:rgba(16,185,129,.15);color:#059669}
+:root[data-theme="dark"] .pill.ok{color:#34D399}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill.ok{color:#34D399}}
+.ch{display:flex;gap:8px;align-items:center;padding:7px 10px;border-radius:8px}
+.ch.on{background:var(--indigo-50);color:var(--accent-text);font-weight:500}
+.av{width:22px;height:22px;border-radius:50%;background:var(--indigo);flex:none}
+
+.slider{width:100%;min-width:0;display:flex;flex-direction:column;gap:14px}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:12px;gap:0}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.slide button{all:unset;display:block;cursor:zoom-in;border-radius:12px;overflow:hidden;background:var(--surface);border:1px solid var(--line);aspect-ratio:16/10}
+.slide button:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.slide img{width:100%;height:100%;object-fit:contain;display:block}
+.slide figcaption{font-size:13px;color:var(--ink-2);text-align:center}
+.sl-ctl{display:flex;align-items:center;justify-content:center;gap:16px}
+.dots{display:flex;gap:8px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--dash);transition:all .2s ease}
+.dots i.on{background:var(--indigo);width:22px;border-radius:4px}
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.step{text-align:center;position:relative;padding:0 8px}
+.step .ic{width:48px;height:48px;border-radius:50%;background:var(--indigo-50);color:var(--indigo);display:grid;place-items:center;margin:0 auto 20px;position:relative;z-index:1}
+.step:not(:last-child)::after{content:"";position:absolute;top:24px;left:calc(50% + 36px);right:calc(-50% + 36px);border-top:2px dashed var(--dash)}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{font-size:15px;color:var(--ink-2)}
+blockquote{margin:64px auto 0;max-width:760px;border-left:3px solid var(--indigo);padding:8px 0 8px 28px;font:500 clamp(20px,2.6vw,26px)/1.5 var(--display);color:var(--ink)}
+
+/* SKILLS */
+.skill-row+.skill-row{margin-top:36px}
+.skill-row h3{font-size:14px;font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border-radius:8px;background:var(--chip);border:1px solid transparent;font-weight:500;font-size:15px;transition:all .2s ease}
+.chip svg{color:var(--indigo);flex:none}
+.chip:hover{background:var(--chip-hover);border-color:var(--indigo)}
+
+/* CERTS */
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px 16px 24px;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;gap:16px;min-width:0}
+.cert:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.cert button{all:unset;cursor:zoom-in;display:block;border-radius:16px;overflow:hidden;background:var(--frame);aspect-ratio:3/2;display:grid;place-items:center}
+.cert button:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.cert img{width:100%;height:100%;object-fit:cover;display:block}
+.cert h3{font-size:18px;padding:0 8px}
+.cert p{font-size:14px;color:var(--ink-2);padding:0 8px;margin-top:-8px}
+.cert .meta{margin-top:auto;padding:0 8px;font-size:13px;color:var(--accent-text);font-weight:500}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(5,8,16,.85);display:none;place-items:center;padding:24px;cursor:zoom-out}
+.lb.open{display:grid}.lb img{max-width:min(1100px,100%);max-height:88vh;border-radius:12px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.photo{border-radius:24px;overflow:hidden;background:var(--frame);box-shadow:var(--shadow);aspect-ratio:1;position:sticky;top:100px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about h2{font-size:clamp(28px,4vw,40px);margin-bottom:24px}
+.about .bio{color:var(--ink-2);font-size:17px;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:32px 0}
+.fact{background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px}
+.fact b{display:block;font:700 26px var(--display);color:var(--accent-text)}
+.fact span{font-size:13px;color:var(--ink-2)}
+.timeline{margin:40px 0 28px;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.timeline li{position:relative;padding:0 0 28px 28px;border-left:2px dashed var(--dash);margin-left:6px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--indigo);box-shadow:0 0 0 4px var(--indigo-50)}
+.timeline small{font-size:13px;color:var(--ink-3)}
+.timeline h4{font-size:18px;margin:2px 0 4px}
+.timeline p{font-size:15px;color:var(--ink-2);max-width:62ch}
+.about h3.sub{font-size:20px;margin-top:40px}
+
+/* ACHIEVEMENTS */
+.ach{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.q{position:relative;background:var(--bg-alt);border-radius:16px;border-left:3px solid var(--indigo);padding:36px 28px 28px;min-width:0}
+.alt .q{background:var(--surface)}
+.q::before{content:"\201C";position:absolute;top:-4px;left:18px;font:700 84px/1 var(--display);color:var(--indigo-100)}
+.q p{position:relative;color:var(--ink);font-size:17px}
+.q cite{display:block;margin-top:14px;font-style:normal;font-size:14px;color:var(--ink-3)}
+
+/* CONTACT */
+.contact{text-align:center;max-width:760px;margin:0 auto}
+.contact h2{font-size:clamp(30px,4.4vw,46px)}
+.contact .sub{margin:20px auto 40px;color:var(--ink-2);font-size:18px;max-width:56ch}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+.way{display:flex;align-items:center;gap:16px;padding:18px 20px;min-height:76px;background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:all .2s ease;min-width:0;width:100%;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.way:hover{border-color:var(--indigo);transform:translateY(-2px);box-shadow:var(--shadow)}
+.way .ic{width:44px;height:44px;border-radius:12px;background:var(--indigo-50);color:var(--indigo);display:grid;place-items:center;flex:none}
+.way small{display:block;font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em}
+.way b{font-weight:500;overflow-wrap:anywhere}
+.way>span{min-width:0}
+.toast{margin-top:16px;min-height:24px;font-size:14px;color:var(--accent-text)}
+.social{display:flex;justify-content:center;gap:12px;margin-top:24px}
+.social a{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line);transition:all .2s ease;color:var(--ink)}
+.social a:hover{background:var(--indigo);border-color:var(--indigo);color:#fff}
+
+/* FOOTER */
+footer{background:var(--foot);color:var(--foot-text);padding-block:56px 32px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot .l{display:flex;align-items:center;gap:6px;color:#F3F4F6;font:500 18px var(--display)}
+.foot .l i{width:6px;height:6px;border-radius:50%;background:var(--indigo)}
+.foot .social{margin:0}.foot .social a{border-color:#1F2937;color:#9CA3AF}
+.copy{margin-top:32px;padding-top:24px;border-top:1px solid #1F2937;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .nav ul,.nav-right .btn{display:none}.burger{display:inline-grid}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .stage{height:440px;max-width:520px;margin:0 auto;width:100%}
+  .card{grid-template-columns:1fr;gap:28px;padding:20px}
+  .card .shot,.card:nth-child(even) .shot{order:-1}
+  .shot{min-height:260px;padding:16px}
+  .certs{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:40px}.photo{position:static;max-width:420px}
+  .ach{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  section{padding-block:64px}
+  .steps{grid-template-columns:1fr;gap:0}
+  .step{text-align:left;display:grid;grid-template-columns:48px 1fr;column-gap:20px;padding:0 0 32px}
+  .step .ic{margin:0;grid-row:span 2}
+  .step:not(:last-child)::after{top:48px;bottom:0;left:23px;right:auto;border-top:0;border-left:2px dashed var(--dash)}
+  .step:last-child{padding-bottom:0}
+  .sec-head span{display:none}
+  .facts{grid-template-columns:1fr}
+  .ways{grid-template-columns:1fr}
+  .btn-solid.full{width:100%}
+}
+@media (max-width:480px){
+  .stage{height:400px}.browser{width:82%;height:250px}.code{font-size:10.5px}.phone{height:340px;width:42%}.tablet{height:140px}.tablet strong{font-size:20px}
+  .foot,.copy{flex-direction:column;text-align:center;justify-content:center}.foot .l{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Nizar Yanuar, ke atas">Nizar Yanuar<i></i></a>
+    <ul>
+      <li><a href="#work">Karya</a></li>
+      <li><a href="#process">Proses</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
+      <button class="icon-btn" id="theme" aria-label="Ganti tema"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="icon-btn burger" id="open" aria-label="Buka menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <div class="scrim" id="scrim"></div>
+  <nav aria-label="Menu utama">
+    <button class="icon-btn close" id="close" aria-label="Tutup menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <a class="dl" href="#work">Karya</a><a class="dl" href="#process">Proses</a><a class="dl" href="#sertifikat">Sertifikat</a><a class="dl" href="#about">Tentang</a><a class="dl" href="#contact">Kontak</a>
+    <a class="btn btn-solid" href="#contact">Hubungi Saya</a>
+  </nav>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" style="padding-block:72px 88px">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rise">Front-End Developer · Indonesia</p>
+      <h1 class="rise">Saya membangun web yang rapi, cepat, dan mudah ditemukan.</h1>
+      <p class="sub rise">Lulusan D3 Sistem Informasi dengan IPK 3,96 dan sertifikasi Front-End Web Developer level Mahir. Saya menggabungkan pengembangan front-end, basis data, dan SEO untuk membuat produk digital yang berguna bagi penggunanya.</p>
+      <div class="cta-row rise">
+        <a class="btn btn-solid" href="#work">Lihat Karya Saya</a>
+        <a class="link" href="https://www.linkedin.com/in/raden-muhammad-nizar-y-5144b4138/" target="_blank" rel="noopener">Profil LinkedIn <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="badges rise">
+        <span class="badge"><b>IPK 3,96</b> / 4,00</span>
+        <span class="badge"><b>TOEFL ITP 617</b></span>
+        <span class="badge"><b>110 jam</b> Coding Camp</span>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true" id="stage">
+      <div class="dev browser" data-p="14">
+        <div class="bar"><i></i><i></i><i></i><u>nizaryanuar.dev</u></div>
+        <div class="code"><span class="c">&lt;!-- front-end --&gt;</span><br><span class="k">&lt;section</span> class=<span class="s">"hero"</span><span class="k">&gt;</span><br>&nbsp;&nbsp;<span class="k">&lt;h1&gt;</span>Web yang rapi<span class="k">&lt;/h1&gt;</span><br>&nbsp;&nbsp;<span class="k">&lt;a</span> href=<span class="s">"#work"</span><span class="k">&gt;</span>Karya<span class="k">&lt;/a&gt;</span><br><span class="k">&lt;/section&gt;</span><br><span class="c">/* SELECT * FROM voucher */</span></div>
+      </div>
+      <div class="dev phone" data-p="-22">
+        <h5>Top Up Game</h5>
+        <div class="tile"><span>86 Diamond</span><b>Rp 20.000</b></div>
+        <div class="tile hl"><span>172 Diamond</span><b>Rp 40.000</b></div>
+        <div class="tile"><span>344 Diamond</span><b>Rp 80.000</b></div>
+        <div class="pay">Bayar sekarang</div>
+      </div>
+      <div class="dev tablet" data-p="8">
+        <small>Traffic organik</small><strong>+35%</strong>
+        <svg viewBox="0 0 200 70" fill="none"><path d="M0 62 L30 54 L60 56 L90 40 L120 36 L150 20 L200 6" stroke="#6366F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="200" cy="6" r="4" fill="#6366F1"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Karya Terpilih</h2><hr><span>4 Proyek</span></div>
+    <div class="projects">
+
+      <article class="card">
+        <div class="shot">
+          <div class="mini" role="img" aria-label="Ilustrasi halaman top up voucher game">
+            <h6>Pilih voucher</h6>
+            <div class="grid2">
+              <div class="vc">86 Diamond<b>Rp 20.000</b></div>
+              <div class="vc sel">172 Diamond<b>Rp 40.000</b></div>
+              <div class="vc">344 Diamond<b>Rp 80.000</b></div>
+              <div class="vc">706 Diamond<b>Rp 160.000</b></div>
+            </div>
+            <div class="row" style="margin-top:12px"><span>Status pesanan</span><span class="pill ok">Berhasil</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="tag">Web App · Basis Data · 2023–2024</p>
+          <h3>Top Up Voucher Game Online</h3>
+          <p class="desc">Proyek tugas akhir berupa sistem penjualan voucher game berbasis web. Saya merancang basis data relasional (MySQL) dan alur transaksi online, lalu menguji sistem dengan black-box testing dan menyusun dokumentasi antarmuka.</p>
+          <ul class="metrics"><li>50% waktu transaksi lebih singkat</li><li>Black-box testing</li><li>Basis data relasional</li></ul>
+          <a class="link" href="https://github.com/nizaryanuar" target="_blank" rel="noopener">Lihat di GitHub <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">
+          <div class="slider" aria-roledescription="carousel" aria-label="Bukti kinerja SEO di Indozone">
+            <div class="track" id="track" tabindex="0">
+              <figure class="slide"><button type="button" data-lb="assets/seo-1.jpg" aria-label="Perbesar gambar"><img src="assets/seo-1.jpg" alt="Halaman profil penulis Nizar Yanuar di Indozone"></button><figcaption>Profil penulis Indozone</figcaption></figure>
+              <figure class="slide"><button type="button" data-lb="assets/seo-2.jpg" aria-label="Perbesar gambar"><img src="assets/seo-2.jpg" alt="Grafik dan tabel page views bulanan Januari 2024 sampai Februari 2025 untuk lima penulis"></button><figcaption>Page views bulanan, Jan 2024 – Feb 2025</figcaption></figure>
+              <figure class="slide"><button type="button" data-lb="assets/seo-3.jpg" aria-label="Perbesar gambar"><img src="assets/seo-3.jpg" alt="Ringkasan page views dan total konten: Nizar Yanuar peringkat pertama dengan 1.124.664 page views"></button><figcaption>Ringkasan: peringkat 1 page views di tim</figcaption></figure>
+            </div>
+            <div class="sl-ctl">
+              <button type="button" class="icon-btn" id="prev" aria-label="Slide sebelumnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
+              <button type="button" class="icon-btn" id="next" aria-label="Slide berikutnya"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="tag">Technical Content · SEO · 2020–Sekarang</p>
+          <h3>Optimasi SEO di Indozone</h3>
+          <p class="desc">Sebagai Technical Content Specialist, saya menyusun strategi SEO berbasis riset kata kunci dan analisis tren pembaca. Saya menulis panduan teknis berdasarkan user search intent dan mengoordinasikan standar dokumentasi tim penulis. Geser slide untuk melihat buktinya.</p>
+          <ul class="metrics"><li>+35% traffic organik</li><li>1,12 juta page views</li><li>2.613 konten</li><li>Peringkat 1 PV di tim</li></ul>
+          <a class="link" href="https://www.linkedin.com/in/raden-muhammad-nizar-y-5144b4138/" target="_blank" rel="noopener">Lihat Pengalaman <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">
+          <div class="mini" role="img" aria-label="Ilustrasi kanal komunitas belajar coding">
+            <h6>Komunitas Belajar Coding</h6>
+            <div class="ch on"><span class="av"></span># logika-pemrograman</div>
+            <div class="ch"><span class="av" style="background:var(--dash)"></span># tanya-jawab</div>
+            <div class="ch"><span class="av" style="background:var(--dash)"></span># web-dasar</div>
+            <div class="row" style="margin-top:10px"><span>Anggota aktif</span><span class="pill">100+</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="tag">Komunitas · Discord · Edukasi</p>
+          <h3>Komunitas Belajar Coding</h3>
+          <p class="desc">Saya mendirikan komunitas belajar coding interaktif di Discord untuk mahasiswa. Tujuannya memperkuat pemahaman logika pemrograman dan sistem lewat diskusi dan latihan bersama.</p>
+          <ul class="metrics"><li>100+ mahasiswa bergabung</li><li>Berbasis Discord</li><li>Logika &amp; sistem</li></ul>
+          <a class="link" href="#contact">Ajak Berkolaborasi <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">
+          <div class="mini" role="img" aria-label="Ilustrasi struktur organisasi HIMSI">
+            <h6>HIMSI · Sistem Informasi</h6>
+            <div class="row"><span>Ketua</span><span class="pill">1</span></div>
+            <div class="row"><span>Anggota dipimpin</span><span class="pill">30+</span></div>
+            <div class="row"><span>Program kerja tahunan</span><span class="pill ok">5+ terlaksana</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="tag">Kepemimpinan · Organisasi · Semester 2–4</p>
+          <h3>Ketua Himpunan Mahasiswa Sistem Informasi</h3>
+          <p class="desc">Memimpin HIMSI Universitas Bina Sarana Informatika dan mengeksekusi program kerja di bidang edukasi dan teknologi secara tepat waktu bersama seluruh anggota.</p>
+          <ul class="metrics"><li>30+ anggota</li><li>5+ program kerja</li><li>Tepat waktu</li></ul>
+          <a class="link" href="#about">Lihat Latar Belakang <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Cara Saya Bekerja</h2><hr></div>
+    <div class="steps">
+      <div class="step"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><h3>Analisis</h3><p>Riset kebutuhan, analisis data pembaca atau pengguna, dan pemetaan alur informasi.</p></div>
+      <div class="step"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Rancang</h3><p>Pemodelan proses bisnis, desain basis data, dan rancangan antarmuka.</p></div>
+      <div class="step"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>Bangun</h3><p>Implementasi front-end dengan HTML, CSS, JavaScript, dan Git untuk versioning.</p></div>
+      <div class="step"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><h3>Uji &amp; Dokumentasikan</h3><p>Pengujian black-box, dokumentasi teknis, dan perbaikan berdasarkan data performa.</p></div>
+    </div>
+    <blockquote>Teknologi yang baik bukan yang paling rumit, tetapi yang paling mudah dipakai dan ditemukan orang.</blockquote>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Tools &amp; Skills</h2><hr></div>
+    <div class="skill-row">
+      <h3>Pengembangan</h3>
+      <div class="chips">
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Front-End Web Development</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Visual Studio Code</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M18 11.5c0 4-6 3-12 4"/></svg>Git / GitHub</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>MySQL</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>DevOps Basics</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg>Black-box Testing</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <h3>Data &amp; Konten</h3>
+      <div class="chips">
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>SEO</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Google Analytics</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Meta Ads Manager</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>Microsoft Excel</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></svg>Microsoft Word</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Google Workspace</span>
+        <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Meta Business Suite</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="sertifikat" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Sertifikasi</h2><hr><span>3 Sertifikat</span></div>
+    <div class="certs">
+      <article class="cert">
+        <button type="button" data-lb="assets/cert-dbs.jpg" aria-label="Perbesar sertifikat DBS Foundation Coding Camp"><img src="assets/cert-dbs.jpg" alt="Sertifikat kelulusan Front-End Web Developer level Mahir, DBS Foundation Coding Camp 2024"></button>
+        <h3>Front-End Web Developer (Mahir)</h3>
+        <p>DBS Foundation Coding Camp 2024 × Dicoding. 110 jam pembelajaran.</p>
+        <span class="meta">18 Desember 2024</span>
+      </article>
+      <article class="cert">
+        <button type="button" data-lb="assets/cert-devops.jpg" aria-label="Perbesar sertifikat Belajar Dasar-Dasar DevOps"><img src="assets/cert-devops.jpg" alt="Sertifikat kompetensi Belajar Dasar-Dasar DevOps dari Dicoding Academy"></button>
+        <h3>Belajar Dasar-Dasar DevOps</h3>
+        <p>Dicoding Academy. Dapat diverifikasi di dicoding.com/certificates/07Z602JQMZQR.</p>
+        <span class="meta">19 September 2024 · berlaku hingga 2027</span>
+      </article>
+      <article class="cert">
+        <button type="button" data-lb="assets/cert-toefl.jpg" aria-label="Perbesar sertifikat TOEFL ITP"><img src="assets/cert-toefl.jpg" alt="Sertifikat TOEFL ITP dengan skor total 617"></button>
+        <h3>TOEFL ITP®, skor 617</h3>
+        <p>ETS / IIEF Jakarta. Listening 66, Structure 56, Reading 63.</p>
+        <span class="meta">6 November 2025</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="photo"><img src="assets/photo.jpg" alt="Foto Raden Muhammad Nizar Yanuar Saputra"></div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:16px">Tentang Saya</p>
+      <h2>Raden Muhammad Nizar Yanuar Saputra, A.Md.Kom.</h2>
+      <p class="bio">Saya lulusan D3 Sistem Informasi Universitas Bina Sarana Informatika, Kampus Kota Bogor, dengan predikat Pujian. Sejak 2020 saya bekerja sebagai Technical Content Specialist di Indozone, dan sejak 2024 saya memperdalam front-end web development dan DevOps. Saya senang memimpin komunitas, mendokumentasikan hal teknis dengan jelas, dan memakai data untuk mengambil keputusan.</p>
+      <div class="facts">
+        <div class="fact"><b>3,96</b><span>IPK dari 4,00, predikat Pujian</span></div>
+        <div class="fact"><b>617</b><span>Skor TOEFL ITP (Advanced)</span></div>
+        <div class="fact"><b>100+</b><span>Artikel teknis peringkat 5 besar Google</span></div>
+      </div>
+      <h3 class="sub" style="margin-top:0">Pengalaman &amp; Pendidikan</h3>
+      <ul class="timeline">
+        <li><small>Januari 2020 – Sekarang · Jakarta</small><h4>Technical Content Specialist, Indozone</h4><p>Menaikkan traffic organik 35%, mengoordinasikan tim penulis, dan menganalisis performa konten harian.</p></li>
+        <li><small>2023 – 2024 · Bogor</small><h4>Pengembang Sistem, Proyek Tugas Akhir</h4><p>Sistem penjualan voucher game berbasis web dengan basis data relasional dan alur transaksi online.</p></li>
+        <li><small>Semester 2–4 · Bogor</small><h4>Ketua HIMSI, Universitas Bina Sarana Informatika</h4><p>Memimpin 30+ anggota dan mendirikan komunitas belajar coding dengan 100+ mahasiswa.</p></li>
+        <li><small>Lulus Februari 2026 · Bogor</small><h4>D3 Sistem Informasi, UBSI Kampus Kota Bogor</h4><p>Gelar Ahli Madya Komputer. Praktik kerja lapangan di PT Telkom Indonesia, Tbk. Akreditasi universitas dan program studi: Unggul.</p></li>
+      </ul>
+      <a class="link" href="https://www.linkedin.com/in/raden-muhammad-nizar-y-5144b4138/" target="_blank" rel="noopener">Terhubung di LinkedIn <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Pencapaian</h2><hr></div>
+    <div class="ach">
+      <div class="q"><p>Menaikkan traffic organik web sebesar 35% lewat riset kata kunci dan analisis tren pembaca.</p><cite>Indozone · Technical Content Specialist</cite></div>
+      <div class="q"><p>Mempercepat pemrosesan transaksi pengguna hingga 50% lewat rancangan basis data dan alur transaksi yang efisien.</p><cite>Proyek tugas akhir · Top Up Voucher Game</cite></div>
+      <div class="q"><p>Memimpin 30+ anggota mengeksekusi 5+ program kerja tahunan di bidang edukasi dan teknologi.</p><cite>HIMSI · Ketua</cite></div>
+      <div class="q"><p>Menyelesaikan 34 mata kuliah dengan nilai A pada 33 di antaranya, lulus dengan IPK 3,96 dan predikat Pujian.</p><cite>Transkrip akademik · UBSI</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact">
+    <h2>Mari Bekerja Sama</h2>
+    <p class="sub">Saya terbuka untuk peluang penuh waktu di bidang Teknologi Informasi, front-end development, dan operasional digital. Hubungi saya lewat salah satu kanal di bawah.</p>
+    <div class="ways">
+      <button class="way" type="button" data-copy="nizaryanuar9a@gmail.com" data-label="Email disalin"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email · ketuk untuk menyalin</small><b>nizaryanuar9a@gmail.com</b></span></button>
+      <a class="way" href="https://wa.me/62895347204406" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg></span><span><small>WhatsApp</small><b>0895 3472 04406</b></span></a>
+      <a class="way" href="https://www.linkedin.com/in/raden-muhammad-nizar-y-5144b4138/" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.700V21h-4z"/></svg></span><span><small>LinkedIn</small><b>raden-muhammad-nizar-y</b></span></a>
+      <a class="way" href="https://github.com/nizaryanuar" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.2-4-2-6-2.500m12 5v-3.500a3 3 0 0 0-.8-2.300c2.800-.3 5.800-1.400 5.800-6.200a4.800 4.800 0 0 0-1.300-3.300 4.500 4.500 0 0 0-.1-3.300s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.500 4.500 0 0 0-.1 3.300A4.800 4.800 0 0 0 4 9.700c0 4.800 3 5.900 5.800 6.200a3 3 0 0 0-.8 2.300V22"/></svg></span><span><small>GitHub</small><b>github.com/nizaryanuar</b></span></a>
+    </div>
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="l">Nizar Yanuar · Front-End Developer<i></i></div>
+      <div style="font-size:14px">Dirancang dan dibangun dengan HTML, CSS, dan JavaScript</div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/raden-muhammad-nizar-y-5144b4138/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.700V21h-4z"/></svg></a>
+        <a href="https://github.com/nizaryanuar" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.2-4-2-6-2.500m12 5v-3.500a3 3 0 0 0-.8-2.300c2.800-.3 5.800-1.400 5.800-6.200a4.800 4.800 0 0 0-1.300-3.300 4.500 4.500 0 0 0-.1-3.300s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.500 4.500 0 0 0-.1 3.300A4.800 4.800 0 0 0 4 9.700c0 4.800 3 5.900 5.800 6.200a3 3 0 0 0-.8 2.300V22"/></svg></a>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 Raden Muhammad Nizar Yanuar Saputra. Hak cipta dilindungi.</span><span>Kota Bogor, Jawa Barat</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="Pratinjau sertifikat"><img alt="" id="lbimg"></div>
+
+<script>
+(function(){
+  var d=document.getElementById('drawer');
+  function setD(o){d.classList.toggle('open',o)}
+  document.getElementById('open').onclick=function(){setD(true)};
+  document.getElementById('close').onclick=function(){setD(false)};
+  document.getElementById('scrim').onclick=function(){setD(false)};
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setD(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setD(false);lb.classList.remove('open')}});
+
+  var root=document.documentElement;
+  document.getElementById('theme').onclick=function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  };
+
+  var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+  document.querySelectorAll('[data-lb]').forEach(function(b){b.onclick=function(){lbimg.src=b.dataset.lb;lb.classList.add('open')}});
+  lb.onclick=function(){lb.classList.remove('open')};
+
+  var toast=document.getElementById('toast');
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){
+    var t=b.dataset.copy;
+    function ok(){toast.textContent=b.dataset.label+': '+t}
+    function fb(){var r=document.createRange();r.selectNodeContents(b.querySelector('b'));var s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent='Email terpilih, salin secara manual'}
+    try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+  }});
+
+  var tr=document.getElementById('track'),dots=document.querySelectorAll('#dots i');
+  function go(d){tr.scrollBy({left:d*tr.clientWidth,behavior:'smooth'})}
+  document.getElementById('prev').onclick=function(){go(-1)};
+  document.getElementById('next').onclick=function(){go(1)};
+  tr.addEventListener('scroll',function(){var i=Math.round(tr.scrollLeft/tr.clientWidth);dots.forEach(function(x,j){x.classList.toggle('on',i===j)})},{passive:true});
+  tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var els=document.querySelectorAll('#stage .dev'),tick=false;
+    var base=['rotate(-6deg)','rotate(12deg)','rotate(4deg)'];
+    addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){
+      var y=Math.min(scrollY,600);
+      els.forEach(function(el,i){el.style.transform=base[i]+' translateY('+(y*(+el.dataset.p)/100)+'px)'});
+      tick=false})},{passive:true});
+  }
+})();
+</script>
+
+</body></html>
